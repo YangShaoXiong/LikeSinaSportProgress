@@ -29,7 +29,7 @@
 此问题的朋友麻烦告诉我一声。谢谢！！！
 ## License
 ```
-   Copyright 2016 YangShaoXiong
+   Copyright 2016 Dreamer
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
