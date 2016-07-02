@@ -11,7 +11,7 @@
 | progress_anim_duration      | integer   | 进度条的动画时长（单位毫秒） | 3000 |
 | progress_height             | dimension | 进度条的高度                | 15 |
 ## Usage
-```
+```java
 <com.dreamer.ratioprogresslibrary.RatioProgress
 	android:layout_width="match_parent"
     android:layout_height="wrap_content"
