@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.dreamer.likesinasportprogress.SinaSportProgress
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:left_progress_bg="@color/bg_left_progress"
+        app:left_progress_value="1580"
+        app:right_progress_bg="@color/bg_right_progress"
+        app:right_progress_value="800"
+        app:left_right_progress_spacing="8dp"
+        app:progress_anim_duration="6000"/>
+    <TextView
+        android:id="@+id/tv_left_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progress"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/bg_left_progress"
+        android:text="100"/>
+
+    <TextView
+        android:id="@+id/tv_right_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progress"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/bg_right_progress"
+        android:text="100"/>
+</RelativeLayout>

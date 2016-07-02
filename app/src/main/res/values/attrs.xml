@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SinaSportProgress">
+        <attr name="left_progress_value" format="integer"/>
+        <attr name="left_progress_bg" format="color"/>
+        <attr name="right_progress_value" format="integer"/>
+        <attr name="right_progress_bg" format="color"/>
+        <attr name="left_right_progress_spacing" format="dimension"/>
+        <attr name="progress_anim_duration" format="integer"/>
+        <attr name="progress_height" format="dimension"/>
+    </declare-styleable>
+</resources>
