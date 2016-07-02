@@ -16,3 +16,18 @@
 不知道为什么自己定义的RatioProgress它原先自带的那些设置间隔、显示位置的属性都失效了，目前的解决办法是在它的外层再裹一层
 (LinearLayout或者RelativeLayout设置容器的间隔或显示位置)来解决RatioProgress要设置间隔、显示位置的功能。有知道怎么解决
 此问题的朋友麻烦告诉我一声。谢谢！！！
+***
+### License
+   Copyright 2016 YangShaoXiong
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
