@@ -8,6 +8,6 @@
 | left_progress_value         | integer   | 左进度条的大小             | 0 |
 | right_progress_bg           | color     | 右进度条的背景颜色         | #1D69E1|
 | right_progress_value        | integer   | 右进度条的大小             | 0 |
-| left_right_progress_spacing | dimension | 左右进度条之间的间隔距离    | 10 |
+| left_right_progress_spacing | integer   | 左右进度条之间的间隔距离(间隔 = n * progress_height)    | n = 1 |
 | progress_anim_duration      | integer   | 进度条的动画时长（单位毫秒） | 3000 |
 | progress_height             | dimension | 进度条的高度                | 15 |

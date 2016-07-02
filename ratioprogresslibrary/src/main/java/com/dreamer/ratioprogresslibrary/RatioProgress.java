@@ -52,10 +52,11 @@ public class RatioProgress extends View{
         int rightProgressBg = t.getColor(R.styleable.RatioProgress_right_progress_bg,
                 getResources().getColor(R.color.bg_right_progress));
         mRightValue = t.getInt(R.styleable.RatioProgress_right_progress_value, 0);
-        mLeftRightProgressSpacing = t.getDimensionPixelSize(
-                R.styleable.RatioProgress_left_right_progress_spacing,
-                10);
+
         mProgressHeight = t.getDimensionPixelSize(R.styleable.RatioProgress_progress_height, 15);
+        mLeftRightProgressSpacing = t.getInt(
+                R.styleable.RatioProgress_left_right_progress_spacing,
+                1);
         mProgressAnimDuration = t.getInt(R.styleable.RatioProgress_progress_anim_duration, 3000);
         mTotalValue = mLeftValue + mRightValue;
 
@@ -88,8 +89,10 @@ public class RatioProgress extends View{
 
         if (heightMode == MeasureSpec.EXACTLY) {
             height = heightSize;
-        } else {
+        } else if (heightMode == MeasureSpec.AT_MOST) {
             height = mProgressHeight;
+        } else {
+            height = heightSize;
         }
 
         setMeasuredDimension(width, height);
@@ -101,14 +104,17 @@ public class RatioProgress extends View{
         float ratio = mLeftValue / (float)mTotalValue;
 
         ValueAnimator animator1 = startProgressAnim(getLeft(),
-                (int) (getRight() * ratio) - mLeftRightProgressSpacing, Direction.LEFT);
+                (int) (getRight() * ratio) - mLeftRightProgressSpacing * mProgressHeight, Direction.LEFT);
         ValueAnimator animator2 = startProgressAnim(getRight(),
-                (int) (getRight() * ratio) + mLeftRightProgressSpacing, Direction.RIGHT);
+                (int) (getRight() * ratio) + mLeftRightProgressSpacing * mProgressHeight, Direction.RIGHT);
         mSet = new AnimatorSet();
         mSet.setDuration(mProgressAnimDuration);
         mSet.playTogether(animator1, animator2);
         mSet.start();
         postInvalidate();
+
+        Log.d(TAG, "getLeft():" + getLeft() + ", getRight():" + getRight()
+            +", getTop():" + getTop() + ", getBottom():" + getBottom());
     }
 
     @Override

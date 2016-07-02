@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp">
+
+        <com.dreamer.ratioprogresslibrary.RatioProgress
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:left_progress_bg="@color/bg_left_progress"
+            app:left_progress_value="1580"
+            app:left_right_progress_spacing="1"
+            app:progress_anim_duration="4000"
+            app:progress_height="15dp"
+            app:right_progress_bg="@color/bg_right_progress"
+            app:right_progress_value="800" />
+    </LinearLayout>
+
+</RelativeLayout>
