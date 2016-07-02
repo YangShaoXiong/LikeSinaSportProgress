@@ -4,6 +4,4 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="bg_left_progress">#DD2F1C</color>
-    <color name="bg_right_progress">#1D69E1</color>
 </resources>

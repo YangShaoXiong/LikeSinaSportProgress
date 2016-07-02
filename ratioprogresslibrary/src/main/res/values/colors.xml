@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_left_progress">#DD2F1C</color>
+    <color name="bg_right_progress">#1D69E1</color>
+</resources>

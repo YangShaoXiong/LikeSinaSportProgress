@@ -1,4 +1,4 @@
-package com.dreamer.likesinasportprogress;
+package com.dreamer.ratioprogresslibrary;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
@@ -13,7 +13,9 @@ import android.view.View;
 /**
  * Created by ysx on 2016/7/2.
  */
-public class SinaSportProgress extends View{
+public class RatioProgress extends View{
+
+    private static final String TAG = RatioProgress.class.getSimpleName();
 
     private Paint mLeftPaint, mRightPaint;
 
@@ -32,32 +34,32 @@ public class SinaSportProgress extends View{
         LEFT, RIGHT;
     }
 
-    public SinaSportProgress(Context context) {
+    public RatioProgress(Context context) {
         this(context, null);
     }
 
-    public SinaSportProgress(Context context, AttributeSet attrs) {
+    public RatioProgress(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public SinaSportProgress(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RatioProgress(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        TypedArray t = context.obtainStyledAttributes(attrs, R.styleable.SinaSportProgress);
-        int leftProgressBg = t.getColor(R.styleable.SinaSportProgress_left_progress_bg,
+        TypedArray t = context.obtainStyledAttributes(attrs, R.styleable.RatioProgress);
+        int leftProgressBg = t.getColor(R.styleable.RatioProgress_left_progress_bg,
                 getResources().getColor(R.color.bg_left_progress));
-        mLeftValue = t.getInt(R.styleable.SinaSportProgress_left_progress_value, 0);
-        int rightProgressBg = t.getColor(R.styleable.SinaSportProgress_right_progress_bg,
+        mLeftValue = t.getInt(R.styleable.RatioProgress_left_progress_value, 0);
+        int rightProgressBg = t.getColor(R.styleable.RatioProgress_right_progress_bg,
                 getResources().getColor(R.color.bg_right_progress));
-        mRightValue = t.getInt(R.styleable.SinaSportProgress_right_progress_value, 0);
+        mRightValue = t.getInt(R.styleable.RatioProgress_right_progress_value, 0);
         mLeftRightProgressSpacing = t.getDimensionPixelSize(
-                R.styleable.SinaSportProgress_left_right_progress_spacing,
+                R.styleable.RatioProgress_left_right_progress_spacing,
                 10);
-        mProgressHeight = t.getDimensionPixelSize(R.styleable.SinaSportProgress_progress_height, 15);
-        mProgressAnimDuration = t.getInt(R.styleable.SinaSportProgress_progress_anim_duration, 3000);
+        mProgressHeight = t.getDimensionPixelSize(R.styleable.RatioProgress_progress_height, 15);
+        mProgressAnimDuration = t.getInt(R.styleable.RatioProgress_progress_anim_duration, 3000);
         mTotalValue = mLeftValue + mRightValue;
 
-        Log.d("SinaSportProgress", "progressHeight:" + mProgressHeight);
+        Log.d(TAG, "progressHeight:" + mProgressHeight);
         mLeftPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mLeftPaint.setStrokeCap(Paint.Cap.SQUARE);
         mLeftPaint.setColor(leftProgressBg);
@@ -116,7 +118,7 @@ public class SinaSportProgress extends View{
         }
         canvas.drawLine(getLeft(), getBottom(), mLeftWidthX, getBottom(), mLeftPaint);
         canvas.drawLine(getRight(), getBottom(), mRightWidthX, getBottom(), mRightPaint);
-        Log.d("SinaSportProgress", "mLeftWidthX:" + mLeftWidthX +", mRightWidthX:" + mRightWidthX);
+        Log.d(TAG, "mLeftWidthX:" + mLeftWidthX +", mRightWidthX:" + mRightWidthX);
 
     }
 

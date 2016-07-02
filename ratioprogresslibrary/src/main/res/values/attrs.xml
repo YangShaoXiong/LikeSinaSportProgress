@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="SinaSportProgress">
+    <declare-styleable name="RatioProgress">
         <attr name="left_progress_value" format="integer"/>
         <attr name="left_progress_bg" format="color"/>
         <attr name="right_progress_value" format="integer"/>
