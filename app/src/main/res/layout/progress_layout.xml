@@ -12,8 +12,8 @@
         app:left_progress_value="1580"
         app:right_progress_bg="@color/bg_right_progress"
         app:right_progress_value="800"
-        app:left_right_progress_spacing="8dp"
-        app:progress_anim_duration="6000"/>
+        app:left_right_progress_spacing="6dp"
+        app:progress_anim_duration="4000"/>
     <TextView
         android:id="@+id/tv_left_text"
         android:layout_width="wrap_content"
