@@ -13,7 +13,6 @@
 | progress_anim_duration      | integer   | 进度条的动画时长（单位毫秒） | 3000 |
 | progress_height             | dimension | 进度条的高度                | 15 |
 ### To do list
-```
 不知道为什么自己定义的RatioProgress它原先自带的那些设置间隔、显示位置的属性都失效了，目前的解决办法是在它的外层再裹一层
 (LinearLayout或者RelativeLayout设置容器的间隔或显示位置)来解决RatioProgress要设置间隔、显示位置的功能。有知道怎么解决
 此问题的朋友麻烦告诉我一声。谢谢！！！
