@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.dreamer.ratioprogresslibrary.RatioProgress
+    <com.dreamer.ratioprogresslibrary.RatioProgressBar
         android:id="@+id/progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

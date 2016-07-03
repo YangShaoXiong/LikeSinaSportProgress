@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.dreamer.ratioprogresslibrary.RatioProgress;
+import com.dreamer.ratioprogresslibrary.RatioProgressBar;
 
 /**
  * Created by ysx on 2016/7/2.
@@ -17,7 +17,7 @@ import com.dreamer.ratioprogresslibrary.RatioProgress;
 public class SinaSportLayout extends LinearLayout{
 
     private View mProgressLayout;
-    private RatioProgress mProgress;
+    private RatioProgressBar mProgress;
     private TextView mTvLeft, mTvRight;
 
     private OnSinaSportListener mListener;
@@ -40,7 +40,7 @@ public class SinaSportLayout extends LinearLayout{
         addView(imgLeft, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 
         mProgressLayout = View.inflate(context, R.layout.progress_layout, null);
-        mProgress = (RatioProgress) mProgressLayout.findViewById(R.id.progress);
+        mProgress = (RatioProgressBar) mProgressLayout.findViewById(R.id.progress);
         mTvLeft = (TextView) mProgressLayout.findViewById(R.id.tv_left_text);
         mTvRight = (TextView) mProgressLayout.findViewById(R.id.tv_right_text);
         addView(mProgressLayout, new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f));

@@ -2,7 +2,7 @@
 ![效果图](https://github.com/YangShaoXiong/LikeSinaSportProgress/blob/master/screenshot/image.gif)
 ## Usage
 ```java
-<com.dreamer.ratioprogresslibrary.RatioProgress
+<com.dreamer.ratioprogresslibrary.RatioProgressBar
 	android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:left_progress_bg="@color/bg_left_progress"

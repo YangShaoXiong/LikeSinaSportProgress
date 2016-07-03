@@ -13,9 +13,9 @@ import android.view.View;
 /**
  * Created by ysx on 2016/7/2.
  */
-public class RatioProgress extends View{
+public class RatioProgressBar extends View{
 
-    private static final String TAG = RatioProgress.class.getSimpleName();
+    private static final String TAG = RatioProgressBar.class.getSimpleName();
 
     private Paint mLeftPaint, mRightPaint;
 
@@ -34,30 +34,30 @@ public class RatioProgress extends View{
         LEFT, RIGHT;
     }
 
-    public RatioProgress(Context context) {
+    public RatioProgressBar(Context context) {
         this(context, null);
     }
 
-    public RatioProgress(Context context, AttributeSet attrs) {
+    public RatioProgressBar(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public RatioProgress(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RatioProgressBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        TypedArray t = context.obtainStyledAttributes(attrs, R.styleable.RatioProgress);
-        int leftProgressBg = t.getColor(R.styleable.RatioProgress_left_progress_bg,
+        TypedArray t = context.obtainStyledAttributes(attrs, R.styleable.RatioProgressBar);
+        int leftProgressBg = t.getColor(R.styleable.RatioProgressBar_left_progress_bg,
                 getResources().getColor(R.color.bg_left_progress));
-        mLeftValue = t.getInt(R.styleable.RatioProgress_left_progress_value, 0);
-        int rightProgressBg = t.getColor(R.styleable.RatioProgress_right_progress_bg,
+        mLeftValue = t.getInt(R.styleable.RatioProgressBar_left_progress_value, 0);
+        int rightProgressBg = t.getColor(R.styleable.RatioProgressBar_right_progress_bg,
                 getResources().getColor(R.color.bg_right_progress));
-        mRightValue = t.getInt(R.styleable.RatioProgress_right_progress_value, 0);
+        mRightValue = t.getInt(R.styleable.RatioProgressBar_right_progress_value, 0);
 
-        mProgressHeight = t.getDimensionPixelSize(R.styleable.RatioProgress_progress_height, 15);
+        mProgressHeight = t.getDimensionPixelSize(R.styleable.RatioProgressBar_progress_height, 15);
         mLeftRightProgressSpacing = t.getInt(
-                R.styleable.RatioProgress_left_right_progress_spacing,
+                R.styleable.RatioProgressBar_left_right_progress_spacing,
                 1);
-        mProgressAnimDuration = t.getInt(R.styleable.RatioProgress_progress_anim_duration, 3000);
+        mProgressAnimDuration = t.getInt(R.styleable.RatioProgressBar_progress_anim_duration, 3000);
         mTotalValue = mLeftValue + mRightValue;
 
         Log.d(TAG, "progressHeight:" + mProgressHeight);
