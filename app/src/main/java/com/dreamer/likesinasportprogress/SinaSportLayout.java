@@ -55,8 +55,6 @@ public class SinaSportLayout extends LinearLayout{
             public void onClick(View v) {
                 // 开启按钮缩放动画
                 btnAnim(v);
-                // 点赞+1
-                mProgress.setLeftProgressValue(1);
                 if (mListener != null) {
                     mListener.onLeftClick(mTvLeft);
                 }
@@ -66,7 +64,6 @@ public class SinaSportLayout extends LinearLayout{
             @Override
             public void onClick(View v) {
                 btnAnim(v);
-                mProgress.setRightProgressValue(1);
                 if (mListener != null) {
                     mListener.onRightClick(mTvRight);
                 }
@@ -102,6 +99,18 @@ public class SinaSportLayout extends LinearLayout{
     private int px2dip(Context ctx, float pxValue) {
         float scale = ctx.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
+    }
+
+    public void incrementLeftProgressValue(int value) {
+        if (mProgress != null) {
+            mProgress.setLeftProgressValue(value);
+        }
+    }
+
+    public void incrementRightProgressValue(int value) {
+        if (mProgress != null) {
+            mProgress.setRightProgressValue(value);
+        }
     }
 
     public int getLeftProgressValue() {

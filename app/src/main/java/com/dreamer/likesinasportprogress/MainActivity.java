@@ -19,11 +19,13 @@ public class MainActivity extends AppCompatActivity {
         mSinaSportLayout.setOnSinaSportListener(new SinaSportLayout.OnSinaSportListener() {
             @Override
             public void onLeftClick(TextView tvLeft) {
+                mSinaSportLayout.incrementLeftProgressValue(20);
                 tvLeft.setText(mSinaSportLayout.getLeftProgressValue() + "");
             }
 
             @Override
             public void onRightClick(TextView tvRight) {
+                mSinaSportLayout.incrementRightProgressValue(20);
                 tvRight.setText(mSinaSportLayout.getRightProgressValue() + "");
             }
         });

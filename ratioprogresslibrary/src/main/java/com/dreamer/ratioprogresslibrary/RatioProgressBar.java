@@ -58,7 +58,7 @@ public class RatioProgressBar extends View{
                 R.styleable.RatioProgressBar_left_right_progress_spacing,
                 1);
         mProgressAnimDuration = t.getInt(R.styleable.RatioProgressBar_progress_anim_duration, 3000);
-        mTotalValue = mLeftValue + mRightValue;
+        mTotalValue = calculateTotalProgressValue();
 
         Log.d(TAG, "progressHeight:" + mProgressHeight);
         mLeftPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -101,12 +101,12 @@ public class RatioProgressBar extends View{
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        float ratio = mLeftValue / (float)mTotalValue;
+        //float ratio = mLeftValue / (float)mTotalValue;
 
         ValueAnimator animator1 = startProgressAnim(getLeft(),
-                (int) (getRight() * ratio) - mLeftRightProgressSpacing * mProgressHeight, Direction.LEFT);
+                calculateLeftProgressWidth() , Direction.LEFT);
         ValueAnimator animator2 = startProgressAnim(getRight(),
-                (int) (getRight() * ratio) + mLeftRightProgressSpacing * mProgressHeight, Direction.RIGHT);
+                calculateRightProgressWidth() , Direction.RIGHT);
         mSet = new AnimatorSet();
         mSet.setDuration(mProgressAnimDuration);
         mSet.playTogether(animator1, animator2);
@@ -149,10 +149,12 @@ public class RatioProgressBar extends View{
 
     public void setLeftProgressValue(int progress) {
         mLeftValue += progress;
+        resetProgressWidth();
     }
 
     public void setRightProgressValue(int progress) {
         mRightValue += progress;
+        resetProgressWidth();
     }
 
     public int getLeftProgressValue() {
@@ -161,5 +163,37 @@ public class RatioProgressBar extends View{
 
     public int getRightProgressValue() {
         return mRightValue;
+    }
+
+    private int calculateTotalProgressValue() {
+        return mLeftValue + mRightValue;
+    }
+
+    /**
+     * 计算左进度的宽度
+     * @return
+     */
+    private int calculateLeftProgressWidth() {
+        float ratio = mLeftValue / (float)mTotalValue;
+        return (int) (getRight() * ratio) - mLeftRightProgressSpacing * mProgressHeight;
+    }
+
+    /**
+     * 计算右进度的宽度
+     * @return
+     */
+    private int calculateRightProgressWidth() {
+        float ratio = mLeftValue / (float)mTotalValue;
+        return  (int) (getRight() * ratio) + mLeftRightProgressSpacing * mProgressHeight;
+    }
+
+    /**
+     * 重新设置左右进度条
+     */
+    private void resetProgressWidth() {
+        mTotalValue = calculateTotalProgressValue();
+        mLeftWidthX = calculateLeftProgressWidth();
+        mRightWidthX = calculateRightProgressWidth();
+        postInvalidate();
     }
 }
