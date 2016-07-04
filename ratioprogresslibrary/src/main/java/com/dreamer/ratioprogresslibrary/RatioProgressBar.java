@@ -46,18 +46,25 @@ public class RatioProgressBar extends View{
         super(context, attrs, defStyleAttr);
 
         TypedArray t = context.obtainStyledAttributes(attrs, R.styleable.RatioProgressBar);
-        int leftProgressBg = t.getColor(R.styleable.RatioProgressBar_left_progress_bg,
-                getResources().getColor(R.color.bg_left_progress));
-        mLeftValue = t.getInt(R.styleable.RatioProgressBar_left_progress_value, 0);
-        int rightProgressBg = t.getColor(R.styleable.RatioProgressBar_right_progress_bg,
-                getResources().getColor(R.color.bg_right_progress));
-        mRightValue = t.getInt(R.styleable.RatioProgressBar_right_progress_value, 0);
+        int leftProgressBg;
+        int rightProgressBg;
+        try {
+            leftProgressBg = t.getColor(R.styleable.RatioProgressBar_left_progress_bg,
+                    getResources().getColor(R.color.bg_left_progress));
+            mLeftValue = t.getInt(R.styleable.RatioProgressBar_left_progress_value, 0);
+            rightProgressBg = t.getColor(R.styleable.RatioProgressBar_right_progress_bg,
+                    getResources().getColor(R.color.bg_right_progress));
+            mRightValue = t.getInt(R.styleable.RatioProgressBar_right_progress_value, 0);
 
-        mProgressHeight = t.getDimensionPixelSize(R.styleable.RatioProgressBar_progress_height, 15);
-        mLeftRightProgressSpacing = t.getInt(
-                R.styleable.RatioProgressBar_left_right_progress_spacing,
-                1);
-        mProgressAnimDuration = t.getInt(R.styleable.RatioProgressBar_progress_anim_duration, 3000);
+            mProgressHeight = t.getDimensionPixelSize(R.styleable.RatioProgressBar_progress_height, 15);
+            mLeftRightProgressSpacing = t.getInt(
+                    R.styleable.RatioProgressBar_left_right_progress_spacing,
+                    1);
+            mProgressAnimDuration = t.getInt(R.styleable.RatioProgressBar_progress_anim_duration, 3000);
+        } finally {
+            t.recycle();
+        }
+
         mTotalValue = calculateTotalProgressValue();
 
         Log.d(TAG, "progressHeight:" + mProgressHeight);
